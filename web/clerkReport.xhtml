@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+    <h:outputStylesheet name="/css/bootstrap.min.css"/>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+            background-image :url("Resources/images/main.jpg");
+            font-family: sans-serif;
+        }
+
+        .loginBox{
+            position: absolute;
+            top: 30%;
+            right: 76%;
+            transform:translate(-50%,-50%);
+            width:220px;
+            box-sizing:border-box;
+            background: transparent;
+            box-shadow: 0 5px 10px rgba(0,0,0,.5) ;
+            border-radius: 3px;
+            transition: .5s;
+            color: lightseagreen;
+        }
+        .loginBox:hover{
+            box-shadow: 0 5px 10px rgba(0,0,0,.1);
+            background: rgba(255,255,255,1);
+        }
+        .glass{
+            width: 100%;
+            height:100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,.1);
+            border-radius: 3px;
+            transition: .5s;
+
+        }
+        .glass:hover{
+            transform:translate(20px,20px);
+            box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        }
+
+        .pic{
+            margin:0 auto;
+            display :block;
+            margin-bottom: 40px;
+        }
+
+        h3{
+            margin: 0;
+            padding: 0 0 10px;
+            color: slateblue;
+            text-align: center;
+        }
+
+        .loginBox input{
+            width:100% ;
+            margin-bottom :20px ;
+
+        }
+        .loginBox input[type="text"],
+        .loginBox input[type="password"]
+        {
+            border:none;
+            border-bottom:2px solid #262626 ;
+            outline:none;
+            height:40px;
+            color: crimson;
+            background:transparent;
+            font-size: 16px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        .textPlacement{
+            color:rgba(0,0,0,.5);
+        }
+
+        .inputBox{
+            position: relative;
+            text-decoration-color: crimson;
+        }
+        .inputBox span{
+            position: absolute;
+            top:10px;
+            color:#262626;
+        }
+        .loginBox a{
+            color:#262626;
+            font-size:20px ;
+            font-weight:bold ;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+        .loginBox input[type="submit"]{
+            border:none;
+            outline: none;
+            height: 40px;
+            font-size: 16px;
+            background:cornflowerblue;
+            color:#fff;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+
+
+
+
+
+
+        /*     Style 2  */
+        .formBox {
+            position: absolute;
+            top:110%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 820px;
+            box-sizing: border-box;
+            background: transparent;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 5px;
+            transition: .5s;
+            background-color: white;
+        }
+
+        /*.formBox:hover{
+            box-shadow: 0 10px 20px rgba(0,0,0,.1);
+            background: rgba(255,255,255,1);
+        }
+        .glass2{
+            width: 100%;
+            height:100%;
+            padding: 100px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,.1);
+            border-radius: 5px;
+            transition: .5s;
+
+        }
+        .glass2:hover{
+            transform:translate(20px,20px);
+            box-shadow: 0 10px 20px rgba(0,0,0,.5);
+        }
+*/
+        .pic {
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: slateblue;
+            text-align: center;
+        }
+
+        .formBox input {
+            width: 100%;
+            margin-bottom: 20px;
+
+        }
+
+        .formBox input[type="text"],
+        .formBox textarea,
+        .formBox select {
+            border: none;
+            border-bottom: 2px solid #262626;
+            outline: none;
+            height: 40px;
+            color: crimson;
+            background: transparent;
+            font-size: 16px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+
+        .textPlacement2 {
+            color: rgba(0, 0, 0, .5);
+        }
+
+        .formInput {
+            position: relative;
+            text-decoration-color: crimson;
+        }
+
+        .formInput span {
+            position: absolute;
+            top: 10px;
+            color: #262626;
+        }
+
+        .formBox a {
+            color: #262626;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+
+        .formBox input[type="submit"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            font-size: 16px;
+            background: #ed292a;
+            color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .img-circle {
+            border-radius: 50%
+        }
+
+        .refresh{
+            background: lightseagreen;
+            color: #fff;
+        }
+        .counter {
+            background: dodgerblue;
+            color: #fff;
+            border-radius: 20px;
+        }
+
+    </style>
+</h:head>
+
+<h:body>
+    <script type="text/javascript">
+        PrimeFaces.locales['de'] = {
+            closeText: 'Schließen',
+            prevText: 'Zurück',
+            nextText: 'Weiter',
+            monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+            monthNamesShort: ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
+            dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
+            dayNamesShort: ['Son', 'Mon', 'Die', 'Mit', 'Don', 'Fre', 'Sam'],
+            dayNamesMin: ['S', 'M', 'D', 'M ', 'D', 'F ', 'S'],
+            weekHeader: 'Woche',
+            FirstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: '',
+            timeOnlyTitle: 'Nur Zeit',
+            timeText: 'Zeit',
+            hourText: 'Stunde',
+            minuteText: 'Minute',
+            secondText: 'Sekunde',
+            currentText: 'Aktuelles Datum',
+            ampm: false,
+            month: 'Monat',
+            week: 'Woche',
+            day: 'Tag',
+            allDayText: 'Ganzer Tag'
+        };
+    </script>
+
+<div class="loginBox">
+    <div class="glass">
+        <h:form>
+
+            <h:graphicImage styleClass="img-circle" url="Resources/images/clerk.png"></h:graphicImage>
+            <h3>Clerk</h3>
+
+            <div id="submit" class="textPlacement">
+                <!--<h:commandButton value="Issue Toll Slip" action="usermain" />-->
+                <h:commandButton value="View Toll Reports" action="clerkReport" />
+
+                <h:commandButton value="Logout" action="clerklogin"/>
+
+            </div>
+
+        </h:form>
+
+    </div>
+</div>
+
+
+    <div class="formBox">
+        <div class="glass2">
+            <h:panelGrid columns="7" style="margin:10px" cellpadding="4" width="100%" aling="center">
+
+
+                <h:outputLabel for="sdate" value="Date(mm/dd/yy): " style="text-align: right"/>
+                <p:calendar id="sdate" value="#{vehicleBean.date}" pattern="MM-dd-yy" mask="true" />
+
+                <!-- <h:inputText id="sdate" label="mm/dd/yy"  value="{vehicleBean.date}"></h:inputText>-->
+
+                <h:outputLabel for="vtype" value="Vehicle Type: " style="text-align: right"/>
+                <h:selectOneMenu id="vtype" value="#{vehicleBean.vehicle_type}">
+                    <f:selectItem itemLabel="Select One" itemValue=""/>
+                    <f:selectItem itemLabel="Car" itemValue="Car"/>
+                    <f:selectItem itemLabel="Suv" itemValue="Suv"/>
+                    <f:selectItem itemLabel="Wagon" itemValue="Wagon"/>
+                    <f:selectItem itemLabel="3xlTruck" itemValue="3xlTruck"/>
+                    <f:selectItem itemLabel="4xlTruck" itemValue="4xlTruck"/>
+                    <f:selectItem itemLabel="5xlTruck" itemValue="5xlTruck"/>
+                </h:selectOneMenu>
+
+                <h:outputLabel for="location" value="Locaion: " style="text-align: right"/>
+                <h:selectOneMenu id="location" value="#{vehicleBean.toll_plaza}">
+                    <f:selectItem itemLabel="Select One" itemValue=""/>
+                    <f:selectItem itemLabel="Ravi" itemValue="Ravi"/>
+                    <f:selectItem itemLabel="Chenab" itemValue="Chenab"/>
+                    <f:selectItem itemLabel="Mandra" itemValue="Mandra"/>
+                </h:selectOneMenu>
+
+                <h:outputLabel  value="Vehicle Group: " style="text-align: right"/>
+                <h:selectOneMenu  value="#{vehicleBean.group}">
+                    <f:selectItem itemLabel="Select One" itemValue=""/>
+                    <f:selectItem itemLabel="A" itemValue="A"/>
+                    <f:selectItem itemLabel="B" itemValue="B"/>
+                    <f:selectItem itemLabel="C" itemValue="C"/>
+                    <f:selectItem itemLabel="D" itemValue="D"/>
+                </h:selectOneMenu>
+
+                <p:commandButton value="Refresh Report" action="#{vehicleBean.getRefresh()}" update="upo"   styleClass="refresh" />
+
+            </h:panelGrid>
+
+
+
+
+            <h:form id="upo">
+
+
+                <center>
+                    <h3><h:outputText value="Toll Reports"/></h3>
+                </center>
+                <h:dataTable binding="#{table}" value="#{vehicleBean.getVehicleList()}" var="usernames"
+                             class="table table-striped table-hover table-bordered">
+
+                    <h:column>
+                        <f:facet name="header">
+                            Date
+                        </f:facet>
+                        #{vehicleBean.date}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            time
+                        </f:facet>
+                        #{vehicleBean.time}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Vehicle Count
+                        </f:facet>
+                        #{vehicleBean.vehicle_count}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Vehicle Type
+                        </f:facet>
+                        #{vehicleBean.vehicle_type}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Group
+                        </f:facet>
+                        #{vehicleBean.group}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Location Id
+                        </f:facet>
+                        #{vehicleBean.loc_id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Vehicle Direction
+                        </f:facet>
+                        #{vehicleBean.vehicle_direction}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Toll Plaza
+                        </f:facet>
+                        #{vehicleBean.toll_plaza}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Toll Line
+                        </f:facet>
+                        #{vehicleBean.toll_line}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Tax
+                        </f:facet>
+                        #{vehicleBean.tax}
+                    </h:column>
+
+                </h:dataTable>
+
+                <!--Count Vehicle-->
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Vehicle Count: " />
+                    <h:outputText id="output" value="#{vehicleBean.tvcount}" />
+                    <h:outputText value="Total Tax: " />
+                    <h:outputText id="output2" value="#{vehicleBean.ttax}" />
+                </h:panelGrid>
+
+                <p:commandButton value="Refresh Counter" action="#{vehicleBean.getRefresh()}" styleClass="counter" update="output" />
+
+
+            </h:form>
+        </div>
+    </div>
+</h:body>
+</html>

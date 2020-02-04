@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
+
+<head>
+
+    <title>
+
+    </title>
+
+
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            background-image :url("Resources/images/main.jpg");
+            font-family: sans-serif;
+        }
+
+        .loginBox{
+            position: absolute;
+            top: 35%;
+            right: 76%;
+            transform:translate(-50%,-50%);
+            width:220px;
+            box-sizing:border-box;
+            background: transparent;
+            box-shadow: 0 5px 10px rgba(0,0,0,.5) ;
+            border-radius: 3px;
+            transition: .5s;
+            color: lightseagreen;
+        }
+        .loginBox:hover{
+            box-shadow: 0 5px 10px rgba(0,0,0,.1);
+            background: rgba(255,255,255,1);
+        }
+        .glass{
+            width: 100%;
+            height:100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,.1);
+            border-radius: 3px;
+            transition: .5s;
+
+        }
+        .glass:hover{
+            transform:translate(20px,20px);
+            box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        }
+
+        .pic{
+            margin:0 auto;
+            display :block;
+            margin-bottom: 40px;
+        }
+
+        h3{
+            margin: 0;
+            padding: 0 0 10px;
+            color: slateblue;
+            text-align: center;
+        }
+
+        .loginBox input{
+            width:100% ;
+            margin-bottom :20px ;
+
+        }
+        .loginBox input[type="text"],
+        .loginBox input[type="password"]
+        {
+            border:none;
+            border-bottom:2px solid #262626 ;
+            outline:none;
+            height:40px;
+            color: crimson;
+            background:transparent;
+            font-size: 16px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        .textPlacement{
+            color:rgba(0,0,0,.5);
+        }
+
+        .inputBox{
+            position: relative;
+            text-decoration-color: crimson;
+        }
+        .inputBox span{
+            position: absolute;
+            top:10px;
+            color:#262626;
+        }
+        .loginBox a{
+            color:#262626;
+            font-size:20px ;
+            font-weight:bold ;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+        .loginBox input[type="submit"]{
+            border:none;
+            outline: none;
+            height: 40px;
+            font-size: 16px;
+            background:cornflowerblue;
+            color:#fff;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+
+
+
+
+
+
+        /*     Style 2  */
+        .formBox{
+            position: absolute;
+            top: 77%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            width:700px;
+            box-sizing:border-box;
+            background: transparent;
+            box-shadow: 0 10px 20px rgba(0,0,0,.5) ;
+            border-radius: 5px;
+            transition: .5s;
+            background-image: url("Resources/images/neuron.jpg");
+        }
+        .formBox:hover{
+            box-shadow: 0 10px 20px rgba(0,0,0,.1);
+            background: rgba(255,255,255,1);
+        }
+        .glass2{
+            width: 100%;
+            height:100%;
+            padding: 100px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,.1);
+            border-radius: 5px;
+            transition: .5s;
+
+        }
+        .glass2:hover{
+            transform:translate(20px,20px);
+            box-shadow: 0 10px 20px rgba(0,0,0,.5);
+        }
+
+        .pic{
+            margin:0 auto;
+            display :block;
+            margin-bottom: 40px;
+        }
+
+        h3{
+            margin: 0;
+            padding: 0 0 20px;
+            color: slateblue;
+            text-align: center;
+        }
+
+        .formBox input{
+            width:100% ;
+            margin-bottom :20px ;
+
+        }
+        .formBox input[type="text"],
+        .formBox textarea,
+        .formBox select
+
+        {
+            border:none;
+            border-bottom:2px solid #262626 ;
+            outline:none;
+            height:40px;
+            color: crimson;
+            background:transparent;
+            font-size: 16px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        .textPlacement2{
+            color:rgba(0,0,0,.5);
+        }
+
+        .formInput{
+            position: relative;
+            text-decoration-color: crimson;
+        }
+        .formInput span{
+            position: absolute;
+            top:10px;
+            color:#262626;
+        }
+        .formBox a{
+            color:#262626;
+            font-size:20px ;
+            font-weight:bold ;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+        .formBox input[type="submit"]{
+            border:none;
+            outline: none;
+            height: 40px;
+            font-size: 16px;
+            background: #ed292a;
+            color:#fff;
+            border-radius: 20px;
+            cursor: pointer;}
+
+        .img-circle{
+            border-radius: 50%}
+
+
+        /*     Style 2  */
+        .formBox{
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            width:600px;
+            box-sizing:border-box;
+            background: transparent;
+            box-shadow: 0 10px 20px rgba(0,0,0,.5) ;
+            border-radius: 5px;
+            transition: .5s;
+            background-color:white;
+        }
+        /*.formBox:hover{
+            box-shadow: 0 10px 20px rgba(0,0,0,.1);
+            background: rgba(255,255,255,1);
+        }
+        .glass2{
+            width: 100%;
+            height:100%;
+            padding: 100px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,.1);
+            border-radius: 5px;
+            transition: .5s;
+
+        }
+        .glass2:hover{
+            transform:translate(20px,20px);
+            box-shadow: 0 10px 20px rgba(0,0,0,.5);
+        }
+*/
+        .pic{
+            margin:0 auto;
+            display :block;
+            margin-bottom: 40px;
+        }
+
+        h3{
+            margin: 0;
+            padding: 0 0 20px;
+            color: slateblue;
+            text-align: center;
+        }
+
+        .formBox input{
+            width:100% ;
+            margin-bottom :20px ;
+
+        }
+        .formBox input[type="text"],
+        .formBox textarea,
+        .formBox select
+
+        {
+            border:none;
+            border-bottom:2px solid #262626 ;
+            outline:none;
+            height:40px;
+            color: crimson;
+            background:transparent;
+            font-size: 16px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        .textPlacement2{
+            color:rgba(0,0,0,.5);
+        }
+
+        .formInput{
+            position: relative;
+            text-decoration-color: crimson;
+        }
+        .formInput span{
+            position: absolute;
+            top:10px;
+            color:#262626;
+        }
+        .formBox a{
+            color:#262626;
+            font-size:20px ;
+            font-weight:bold ;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+        .formBox input[type="submit"]{
+            border:none;
+            outline: none;
+            height: 40px;
+            font-size: 16px;
+            background: #ed292a;
+            color:#fff;
+            border-radius: 20px;
+            cursor: pointer;}
+
+        .img-circle{
+            border-radius: 50%}
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+<div class="loginBox">
+    <div class="glass">
+        <h:form>
+
+            <h:graphicImage styleClass="img-circle" url="Resources/images/clerk.png"></h:graphicImage>
+            <h3>Clerk</h3>
+
+            <div id="submit" class="textPlacement">
+                <!--<h:commandButton value="Issue Toll Slip" action="#" />-->
+                <h:commandButton value="View Toll Reports" action="clerkReport" />
+
+                <h:commandButton value="Logout" action="clerklogin"/>
+
+            </div>
+
+        </h:form>
+
+    </div>
+</div>
+<!--
+
+<div class="formBox">
+<div class="glass2">
+
+
+    <h3>Toll Slip</h3>
+    <h:form>
+<h:outputLabel value="Vehicle Category:"></h:outputLabel>
+<h:selectOneMenu id="vehiclecat" value="#">
+    <f:selectItem itemValue="car" itemLabel="Car"/>
+    <f:selectItem itemValue="truck" itemLabel="Truck"/>
+    <f:selectItem itemValue="bus" itemLabel="Bus"/>
+</h:selectOneMenu>
+        <div class="formInput">
+            <h:outputLabel value="Vehicle No: " />
+            <h:inputText value="#" />
+        </div>
+<div class="formInput">
+    <h:outputLabel value="Toll Rate: " />
+    <h:inputText value="#" />
+</div>
+
+<div class="formInput">
+    <h:outputLabel value="Date/Time"></h:outputLabel>
+    <h:inputText value="#"/>
+
+</div>
+<div id="submitBtn" class="textPlacement">
+    <h:commandButton value="Issue Toll Slip" action="#" />
+</div>
+</h:form>
+</div>
+</div>-->
+</body>
+</html>

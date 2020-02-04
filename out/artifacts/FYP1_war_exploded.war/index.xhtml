@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<head>
+    <style type="text/css">
+
+        body{
+            margin: 0;
+            padding: 0;
+            background-image :url("Resources/images/forest.jpg");
+            font-family: sans-serif;
+        }
+
+        .loginBox{
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            width:700px;
+            box-sizing:border-box;
+            background: transparent;
+            box-shadow: 0 20px 30px rgba(0,0,0,.5) ;
+            border-radius: 15px;
+            transition: .5s;
+        }
+        .loginBox:hover{
+            box-shadow: 0 20px 30px rgba(0,0,0,.1);
+            background: rgba(255,255,255,1);
+        }
+        .glass{
+            width: 100%;
+            height:100%;
+            padding: 100px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,.1);
+            border-radius: 15px;
+            transition: .5s;
+
+        }
+        .glass:hover{
+            transform:translate(20px,20px);
+            box-shadow: 0 10px 20px rgba(0,0,0,.5);
+        }
+        h3{
+            margin: 0;
+            padding: 0 0 20px;
+            color: slateblue;
+            text-align: center;
+        }
+
+        .pic1{
+            margin:0 auto;
+            display :block;
+            margin-bottom: 40px;
+        }
+
+        .pic2{
+            margin:0 auto;
+            display :block;
+            margin-bottom: 40px;
+        }
+        .textPlacement{
+            color:rgba(0,0,0,.5);
+        }
+        .loginBox input[type="submit"]{
+            border:none;
+            outline: none;
+            height: 40px;
+            font-size: 16px;
+            background: #ed292a;
+            color:#fff;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .img-circle{
+            border-radius: 50%;
+        }
+    </style>
+
+
+<h:outputStylesheet  library="css" name="main.css"></h:outputStylesheet>
+</head>
+
+<h:body style="background-image: url(Resources/images/main.jpg)" >
+
+
+    <!--<h:graphicImage style="background-position: center" value="Resources/images/admin3.jpg"></h:graphicImage>-->
+<div class="loginBox">
+        <div class="glass">
+            <h3>Intelligent Traffic Counter and Classifier</h3>
+            <h:form>
+
+                <div id="submitBtn" class="textPlacement">
+<h:graphicImage styleClass="img-circle" url="Resources/images/admin3.jpg"></h:graphicImage>
+
+        <h:commandButton  action="adminlogin" value="Admin">
+                </h:commandButton>
+
+            <h:graphicImage styleClass="img-circle" url="Resources/images/user.png"></h:graphicImage>
+        <h:commandButton action="userlogin" value="Supervisor">
+</h:commandButton>
+
+
+                    <h:graphicImage styleClass="img-circle" url="Resources/images/manager.png"></h:graphicImage>
+                    <h:commandButton action="managerlogin" value="Manager">
+                    </h:commandButton>
+
+                    <h:graphicImage styleClass="img-circle" url="Resources/images/clerk.png"></h:graphicImage>
+                    <h:commandButton action="clerklogin" value="Clerk">
+                    </h:commandButton>
+
+
+
+                </div>
+</h:form>
+</div>
+</div>
+</h:body>
+
+
+</html>

@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
+
+<head>
+
+    <title>
+
+    </title>
+
+
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            background-image :url("Resources/images/main.jpg");
+            font-family: sans-serif;
+        }
+
+        .loginBox{
+            position: absolute;
+            top: 45%;
+            right: 78%;
+            transform:translate(-50%,-50%);
+            width:200px;
+            box-sizing:border-box;
+            background: transparent;
+            box-shadow: 0 5px 10px rgba(0,0,0,.5) ;
+            border-radius: 3px;
+            transition: .5s;
+            color: lightseagreen;
+        }
+        .loginBox:hover{
+            box-shadow: 0 5px 10px rgba(0,0,0,.1);
+            background: rgba(255,255,255,1);
+        }
+        .glass{
+            width: 100%;
+            height:100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,.1);
+            border-radius: 3px;
+            transition: .5s;
+
+        }
+        .glass:hover{
+            transform:translate(20px,20px);
+            box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        }
+
+        .pic{
+            margin:0 auto;
+            display :block;
+            margin-bottom: 40px;
+        }
+
+        h3{
+            margin: 0;
+            padding: 0 0 10px;
+            color: slateblue;
+            text-align: center;
+        }
+
+        .loginBox input{
+            width:100% ;
+            margin-bottom :20px ;
+
+        }
+        .loginBox input[type="text"],
+        .loginBox input[type="password"]
+        {
+            border:none;
+            border-bottom:2px solid #262626 ;
+            outline:none;
+            height:40px;
+            color: crimson;
+            background:transparent;
+            font-size: 16px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        .textPlacement{
+            color:rgba(0,0,0,.5);
+        }
+
+        .inputBox{
+            position: relative;
+            text-decoration-color: crimson;
+        }
+        .inputBox span{
+            position: absolute;
+            top:10px;
+            color:#262626;
+        }
+        .loginBox a{
+            color:#262626;
+            font-size:20px ;
+            font-weight:bold ;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+        .loginBox input[type="submit"]{
+            border:none;
+            outline: none;
+            height: 40px;
+            font-size: 16px;
+            background:cornflowerblue;
+            color:#fff;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+
+
+
+
+
+
+/*     Style 2  */
+        .formBox{
+            position: absolute;
+            top: 96%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            width:700px;
+            box-sizing:border-box;
+            background: transparent;
+            box-shadow: 0 10px 20px rgba(0,0,0,.5) ;
+            border-radius: 5px;
+            transition: .5s;
+            background-image: url("Resources/images/neuron.jpg");
+        }
+        .formBox:hover{
+            box-shadow: 0 10px 20px rgba(0,0,0,.1);
+            background: rgba(255,255,255,1);
+        }
+        .glass2{
+            width: 100%;
+            height:100%;
+            padding: 100px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,.1);
+            border-radius: 5px;
+            transition: .5s;
+
+        }
+        .glass2:hover{
+            transform:translate(20px,20px);
+            box-shadow: 0 10px 20px rgba(0,0,0,.5);
+        }
+
+        .pic{
+            margin:0 auto;
+            display :block;
+            margin-bottom: 40px;
+            border-radius: 50%;
+        }
+
+        h3{
+            margin: 0;
+            padding: 0 0 20px;
+            color: slateblue;
+            text-align: center;
+        }
+
+        .formBox input{
+            width:100% ;
+            margin-bottom :20px ;
+
+        }
+        .formBox input[type="text"],
+        .formBox input[type="password"],
+        .formBox textarea,
+        .formBox select,
+        .formBox input[type=radio]
+
+        {
+            border:none;
+            border-bottom:2px solid #262626 ;
+            outline:none;
+            height:40px;
+            color: crimson;
+            background:transparent;
+            font-size: 16px;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        .textPlacement2{
+            color:rgba(0,0,0,.5);
+        }
+
+        .formInput{
+            position: relative;
+            text-decoration-color: crimson;
+        }
+        .formInput span{
+            position: absolute;
+            top:10px;
+            color:#262626;
+        }
+        /*.formBox a{
+            color:#262626;
+            font-size:20px ;
+            font-weight:bold ;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }*/
+        .formBox input[type="submit"]{
+            border:none;
+            outline: none;
+            height: 40px;
+            font-size: 16px;
+            background: #ed292a;
+            color:#fff;
+            border-radius: 20px;
+            cursor: pointer;}
+
+        .img-circle{
+        border-radius: 50%}
+
+
+
+
+    </style>
+</head>
+
+<h:body>
+<div class="loginBox">
+    <div class="glass">
+<h:form>
+
+<h:graphicImage styleClass="pic" url="Resources/images/admin3.jpg"></h:graphicImage>
+<h3>Administrator</h3>
+
+        <div id="submit" class="textPlacement">
+            <h:commandButton value="Register Admin" action="adminRegister"/>
+            <h:commandButton value="Add Employee" action="main" />
+            <h:commandButton value="Employee Management" action="main2" />
+            <h:commandButton value="Toll Reports" action="main3"/>
+            <h:commandButton value="Logout" action="adminlogin"/>
+        </div>
+
+</h:form>
+
+</div>
+</div>
+<div class="formBox">
+    <div class="glass2">
+
+        <h:graphicImage styleClass="pic" value="Resources/images/user.png"></h:graphicImage>
+        <h3>Employee's Detail</h3>
+        <h:form>
+            <div class="formInput">
+                <h:outputLabel value="Username: " />
+                <h:inputText id="user"  value="#{userBean.u.u_username}" >
+                    <f:validateLength minimum="5" maximum="12"></f:validateLength></h:inputText>
+                <h:message for="user" style="color:red"></h:message>
+            </div>
+            <div class="formInput">
+                <h:outputLabel value="Password: " />
+                <h:inputSecret id="pass" required="true"
+                             requiredMessage="Password is required"
+                             validatorMessage="Password must have 6 to 16 chars"
+                             value="#{userBean.u.u_password}"  >
+                    <f:validateLength minimum="6" maximum="16"></f:validateLength></h:inputSecret>
+                <h:message for="pass" style="color:red"></h:message>
+            </div>
+            <div class="formInput">
+                <h:outputLabel value="Job Id: " />
+                <h:inputText id="job" required="true" requiredMessage="Job id is required" value="#{userBean.u.jobId}" />
+                        <h:message for="job" style="color:red"></h:message>
+            </div>
+            <div class="formInput">
+                <h:outputLabel value="Name: " />
+                <h:inputText id="name" required="true" requiredMessage="Name is required" value="#{userBean.u.u_name}" >
+                    <f:validateLength minimum="3" maximum="20"></f:validateLength></h:inputText>
+                    <h:message for="name" style="color:red"></h:message>
+            </div>
+            <div class="formInput">
+                <h:outputLabel value="Father Name: " />
+                <h:inputText id="father" required="true" requiredMessage="Father Name is Required" value="#{userBean.u.u_fatherName}">
+                    <f:validateLength minimum="3" maximum="20"></f:validateLength></h:inputText>
+                        <h:message for="father" style="color:red"></h:message>
+            </div>
+            <div id="email" class="formInput">
+                <h:outputLabel value="Email: " />
+                <h:inputText id="em" required="true" requiredMessage="Email is required"
+                             validatorMessage="Invalid Email format" value="#{userBean.u.u_email}">
+                <f:validateRegex
+                        pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"></f:validateRegex></h:inputText>
+                        <h:message for="em" style="color:red"></h:message>
+
+            </div>
+            <div id="tel" class="formInput">
+                <h:outputLabel value="Contact no: " />
+                <h:inputText id="cont" required="true" requiredMessage="Contact number is required"
+                              value="#{userBean.u.u_phone}" >
+
+                        </h:inputText>
+                <h:message for="cont" style="color:red"></h:message>
+            </div>
+
+
+<div class="formInput">
+    <h:outputLabel value="Gender:"/>
+    <h:selectOneRadio id="genderselectradio" required="true" requiredMessage="Gender is required"
+                      value="#{userBean.u.u_gender}">
+        <f:selectItem itemLabel="Male"  itemValue="Male" ></f:selectItem>
+        <f:selectItem itemLabel="Female"   itemValue="Female" ></f:selectItem>
+        <h:message for="genderselectradio" style="color:red"></h:message>
+    </h:selectOneRadio>
+</div>
+            <div class="formInput">
+                <h:outputLabel value="Designization:"></h:outputLabel>
+                <h:selectOneMenu id="designmenu" required="true" requiredMessage="Designation is required"
+                                 value="#{userBean.u.u_designation}">
+                    <f:selectItem itemValue="Manager" itemLabel="Manager"/>
+                    <f:selectItem itemValue="Clerk" itemLabel="Clerk"/>
+                    <f:selectItem itemValue="Supervisor" itemLabel="Supervisor"/></h:selectOneMenu>
+                    <h:message for="designmenu" style="color:red"></h:message>
+            </div>
+            <div class="formInput">
+                <h:outputLabel value="Job Place:   "></h:outputLabel>
+                <h:selectOneMenu  required="true" requiredMessage="Job place is required" id="jobmenu" value="#{userBean.u.u_jobPlace}">
+                    <f:selectItem itemValue="mandra" itemLabel="Mandra"/>
+                    <f:selectItem itemValue="sohawa" itemLabel="Sohawa"/>
+                    <f:selectItem itemValue="jhelum" itemLabel="Jhelum"/>
+                    <f:selectItem itemValue="islamabad" itemLabel="Islamabad"/>
+                    <f:selectItem itemValue="lahore" itemLabel="Lahore"/>
+                </h:selectOneMenu>
+                    <h:message for="jobmenu" style="color:red"></h:message>
+            </div>
+            <div  class="formInput">
+                <h:outputLabel value="Date Of Birth: " />
+                <h:inputText id="birth" required="true" requiredMessage="Date is required" value="#{userBean.u.u_dateOfBirth}"/>
+                        <h:message for="birth" style="color:red"></h:message>
+            </div>
+            <div class="formInput">
+                <h:outputLabel value="Address: " />
+                <h:inputText id="add" required="true" requiredMessage="Address is required" value="#{userBean.u.u_address}">
+                        <f:validateLength min="8" maximum="32"></f:validateLength></h:inputText>
+                        <h:message for="add" style="color:red"></h:message>
+            </div>
+            <div id="submitBtn" class="textPlacement">
+                <h:commandButton value="Save" action="#{userBean.SaveToDB}" />
+            </div>
+        </h:form>
+    </div>
+</div>
+</h:body>
+
+</html>
